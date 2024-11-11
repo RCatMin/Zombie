@@ -9,7 +9,7 @@ abstract public class Unit {
 	private int position;
 	private int megicPoint;
 	
-	int max;
+	int max; // 최대값
 
 	public Unit (int position, int health, int megicPoint, int max) {
 		this.health = health;
