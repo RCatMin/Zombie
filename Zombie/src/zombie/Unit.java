@@ -7,12 +7,14 @@ abstract public class Unit {
 	
 	private int health;
 	private int position;
+	private int megicPoint;
 	
 	int max; // 최대값
 
-	public Unit (int position, int health, int max) {
+	public Unit (int position, int health, int megicPoint, int max) {
 		this.health = health;
 		this.position = position;
+		this.megicPoint = megicPoint;
 		this.max = max;
 		
 		ran = new Random();
@@ -32,6 +34,14 @@ abstract public class Unit {
 	
 	public void setHealth (int health) {
 		this.health = health;
+	}
+	
+	public int getMegicPoint () {
+		return megicPoint;
+	}
+	
+	public void setMegicPoint (int megicPoint) {
+		this.megicPoint = megicPoint;
 	}
 	
 	public int getMax () {
