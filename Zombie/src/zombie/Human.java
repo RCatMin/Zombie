@@ -22,6 +22,7 @@ public class Human extends Unit{
 			if (ammo > 0) {				
 				boss.setHealth(boss.getHealth() - power);
 				boss.setMegicPoint(boss.getMegicPoint() + power / 2);
+				ammo --;
 			} else {
 				System.out.println ("재장전이 필요합니다.");
 			}
@@ -34,6 +35,12 @@ public class Human extends Unit{
 				String message = String.format("Critical! 보스 좀비에게 치명상을 입혔습니다. \n 보스 체력 : %d", boss.getHealth());
 				System.out.println (message);
 			}
+		}
+	}
+	
+	public void Recovery () {
+		if (Human.getMegicPoint() < 100) {
+			
 		}
 	}
 
