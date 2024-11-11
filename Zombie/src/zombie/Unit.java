@@ -9,12 +9,19 @@ abstract public class Unit {
 	private int position;
 	private int megicPoint;
 	
-	int max; // 최대값
+	int max;
 
 	public Unit (int position, int health, int megicPoint, int max) {
 		this.health = health;
 		this.position = position;
 		this.megicPoint = megicPoint;
+		this.max = max;
+		
+		ran = new Random();
+	}
+	public Unit (int position, int health, int max) {
+		this.health = health;
+		this.position = position;
 		this.max = max;
 		
 		ran = new Random();
