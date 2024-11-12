@@ -59,7 +59,7 @@ public class Game {
 
 		while (player.getPosition() == normalZombie.getPosition()) {
 			System.out.println("1) 공격하기\n2) 재장전\n3) 폭격요청\n4) 구급상자 사용");
-			System.out.println("남은 장탄수" + player.getAmmo());
+			System.out.println("남은 장탄수 : " + player.getAmmo());
 			
 			int selAction = selectNum("입력하세요");
 
@@ -102,6 +102,8 @@ public class Game {
 
 		while (player.getPosition() == boss.getPosition()) {
 			System.out.println("1) 공격하기\n2) 재장전\n3) 폭격요청\n4) 구급상자 사용");
+			System.out.println("남은 장탄수 : " + player.getAmmo());
+
 			int selAction = selectNum("입력하세요");
 
 			if (selAction == 1) {
