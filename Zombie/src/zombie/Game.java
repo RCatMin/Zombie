@@ -53,7 +53,7 @@ public class Game {
 			}
 			
 			if (position == 10) {
-				System.out.println ("게임 클리어");
+				System.out.println ("Game Clear");
 				isRun = false;
 			}
 		}
