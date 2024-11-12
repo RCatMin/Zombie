@@ -16,7 +16,7 @@ public class Game {
 	// 좀비 스폰 위치를 랜덤으로
 	private int spawnLocation = ran.nextInt(5) + 2;
 
-	// 플레이어 (현 위치, 체력, 마나, 공격력, 응급처치키트)
+	// 플레이어 (현 위치, 체력, 마나, 남은 장탄수, 공격력, 응급처치키트)
 	private Human player = new Human(1, 100, 50, 5, 50, 3);
 	// 좀비 (현 위치, 체력, 공력력)
 	private Zombie normalZombie = new Zombie(spawnLocation, 150, 10);
@@ -59,6 +59,8 @@ public class Game {
 
 		while (player.getPosition() == normalZombie.getPosition()) {
 			System.out.println("1) 공격하기\n2) 재장전\n3) 폭격요청\n4) 구급상자 사용");
+			System.out.println("남은 장탄수" + player.getAmmo());
+			
 			int selAction = selectNum("입력하세요");
 
 			if (selAction == 1) {
@@ -84,7 +86,7 @@ public class Game {
 			}
 
 			if (player.getHealth() <= 0) {
-				System.out.println("플레이어가 사망했습니다. \nGAME OVER. ");
+				System.out.println("플레이어가 사망했습니다. \nGAME OVER.");
 				isRun = false;
 
 			}
