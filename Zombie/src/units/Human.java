@@ -1,10 +1,12 @@
 package units;
 
+import interfaces.Enemy;
+
 public class Human extends Unit{
 	
-	int power;
-	int ammo;
-	int mediKit;
+	private int power;
+	private int ammo;
+	private int mediKit;
 
 	public Human(int position, int health, int megicPoint, int ammo, int max, int mediKit) {
 		super(position, health, megicPoint, max);
@@ -12,10 +14,10 @@ public class Human extends Unit{
 		this.mediKit = mediKit;
 	}
 	
-	public void attack (Unit enemy) {
+	public void attack (Unit unit) {
 		ammo = 5;
-		if (enemy instanceof Boss) {
-			Boss boss = (Boss) enemy;
+		if (unit instanceof Enemy) {
+			Boss boss = (Boss) unit;
 			
 			power = ran.nextInt(max) + 3;
 			
@@ -23,7 +25,7 @@ public class Human extends Unit{
 				boss.setHealth(boss.getHealth() - power);
 				boss.setMegicPoint(boss.getMegicPoint() + power / 2);
 				ammo --;
-			} else if (ammo == 0){
+			} else if (ammo <= 0){
 				System.out.println ("재장전이 필요합니다!");
 			}
 			
@@ -39,31 +41,6 @@ public class Human extends Unit{
 				System.out.println (message);
 			}
 		}
-		
-		if (enemy instanceof Zombie) {
-			Zombie normalZombie = (Zombie) enemy;
-
-			power = ran.nextInt(max) + 3;
-			
-			if (ammo > 0) {				
-				normalZombie.setHealth(normalZombie.getHealth() - power);
-				ammo --;
-			} else if (ammo == 0){
-				System.out.println ("재장전이 필요합니다!");
-			}
-			
-			if (normalZombie.getHealth() <= 0) {
-				normalZombie.setHealth(0);
-			}
-			
-			if (power >= 20) {
-				String message = String.format("Critical! 좀비에게 치명상을 입혔습니다. \n 좀비 체력 : %d", normalZombie.getHealth());
-				System.out.println (message);
-			} else {
-				String message = String.format("좀비에게 %d의 데미지를 입혔습니다. \n 좀비 체력 : %d", power, normalZombie.getHealth());
-				System.out.println (message);
-			}
-		}
 	}
 	
 	public void reload () {
@@ -75,9 +52,9 @@ public class Human extends Unit{
 		}
 	}
 	
-	public void callAirStrike(Unit enemy) {
-		if (enemy instanceof Boss) {
-			Boss boss = (Boss) enemy;
+	public void callAirStrike(Unit unit) {
+		if (unit instanceof Boss) {
+			Boss boss = (Boss) unit;
 			
 			power = ran.nextInt(max) + 200;
 			boss.setHealth(boss.getHealth() - power);
@@ -88,8 +65,8 @@ public class Human extends Unit{
 			System.out.println (message);
 		}
 		
-		if (enemy instanceof Zombie) {
-			Zombie normalZombie = (Zombie) enemy;
+		if (unit instanceof Zombie) {
+			Zombie normalZombie = (Zombie) unit;
 			
 			power = ran.nextInt(max) + 200;
 			normalZombie.setHealth(normalZombie.getHealth() - power);
