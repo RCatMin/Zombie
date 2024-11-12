@@ -1,4 +1,4 @@
-package zombie;
+package units;
 
 public class Human extends Unit{
 	

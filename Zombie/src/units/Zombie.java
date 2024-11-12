@@ -1,4 +1,4 @@
-package zombie;
+package units;
 
 public class Zombie extends Unit{
 
