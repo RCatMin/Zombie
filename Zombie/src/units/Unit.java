@@ -24,7 +24,7 @@ abstract public class Unit {
 		this.position = position;
 		this.max = max;
 		
-		ran = new Random();
+		ran = new Random(); 
 	}
 	
 	public int getPosition () {

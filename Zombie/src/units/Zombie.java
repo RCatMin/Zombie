@@ -21,7 +21,7 @@ public class Zombie extends Unit implements Enemy{
 			unit.setMegicPoint(unit.getMegicPoint() + power);
 			if (unit.getHealth() <= 0) {
 				unit.setHealth(0);
-			}
+			} 
 		}
 		
 		// 좀비 공격력이 0일 때 MISS 아니면 피격 후 남은 체력 출력

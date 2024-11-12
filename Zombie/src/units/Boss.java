@@ -12,7 +12,7 @@ public class Boss extends Zombie {
 
 	public void attack(Unit unit) {
 
-		unit.setHealth(unit.getHealth() - power);
+		unit.setHealth(unit.getHealth() - power); 
 		unit.setMegicPoint(unit.getMegicPoint() + power);
 
 		if (power > 20) {

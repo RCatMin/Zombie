@@ -37,7 +37,7 @@ public class Human extends Unit{
 				}
 				
 				if (boss.getHealth() <= 0) {
-					boss.setHealth(0);
+					boss.setHealth(0); 
 				}
 			} else {
 				if (ammo > 0) {				

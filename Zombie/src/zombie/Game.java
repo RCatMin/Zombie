@@ -17,7 +17,7 @@ public class Game {
 	private int spawnLocation = ran.nextInt(5) + 2;
 
 	// 플레이어 (현 위치, 체력, 마나, 남은 장탄수, 공격력, 응급처치키트)
-	private Human player = new Human(1, 100, 50, 5, 50, 3);
+	private Human player = new Human(1, 100, 50, 5, 50, 3); 
 	// 좀비 (현 위치, 체력, 공력력)
 	private Zombie normalZombie = new Zombie(spawnLocation, 150, 30);
 	// 보스 (현 위치, 체력, 공격력)
