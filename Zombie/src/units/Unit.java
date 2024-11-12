@@ -3,11 +3,11 @@ package units;
 import java.util.Random;
 
 abstract public class Unit {
-	Random ran;
+	protected Random ran;
 	
-	private int health;
-	private int position;
-	private int megicPoint;
+	protected int health;
+	protected int position;
+	protected int megicPoint;
 	
 	int max; // 최대값
 
