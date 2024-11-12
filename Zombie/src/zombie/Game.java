@@ -19,13 +19,13 @@ public class Game {
 	// 플레이어 (현 위치, 체력, 마나, 남은 장탄수, 공격력, 응급처치키트)
 	private Human player = new Human(1, 100, 50, 5, 50, 3);
 	// 좀비 (현 위치, 체력, 공력력)
-	private Zombie normalZombie = new Zombie(spawnLocation, 150, 10);
+	private Zombie normalZombie = new Zombie(spawnLocation, 150, 30);
 	// 보스 (현 위치, 체력, 공격력)
 	private Boss boss = new Boss(spawnLocation + 3, 300, 50);
 
 	private int position = player.getPosition();
 
-	boolean isRun = true;
+	private boolean isRun = true;
 
 	public void run() {
 		while (isRun) {
@@ -49,6 +49,11 @@ public class Game {
 
 			if (select == 2) {
 				System.out.println("게임을 종료합니다.");
+				isRun = false;
+			}
+			
+			if (position == 10) {
+				System.out.println ("게임 클리어");
 				isRun = false;
 			}
 		}
@@ -87,7 +92,7 @@ public class Game {
 
 			if (player.getHealth() <= 0) {
 				System.out.println("플레이어가 사망했습니다. \nGAME OVER.");
-				isRun = false;
+				break;
 
 			}
 			if (normalZombie.getHealth() <= 0) {
@@ -130,12 +135,12 @@ public class Game {
 
 			if (player.getHealth() <= 0) {
 				System.out.println("플레이어가 사망했습니다. \nGAME OVER. ");
-				isRun = false;
+				break;
 
 			}
 			if (boss.getHealth() <= 0) {
-				System.out.println("보스를 사살했습니다. \nGAME CLEAR");
-				isRun = false;
+				System.out.println("보스를 사살했습니다.");
+				break;
 			}
 		}
 	}
