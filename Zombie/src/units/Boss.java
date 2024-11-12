@@ -1,4 +1,4 @@
-package zombie;
+package units;
 
 import java.util.Random;
 
